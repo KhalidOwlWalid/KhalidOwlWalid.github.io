@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="home">
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Latest posts" }}</h2>
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      {%- assign words = post.content | number_of_words -%}
+      <li>
+        <span class="post-meta">
+          {{ post.date | date: "%b %-d, %Y" }} · {{ words | divided_by: 200 | plus: 1 }} min read
+        </span>
+        <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+        <p class="post-excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 30 }}</p>
+      </li>
+      {%- endfor -%}
+    </ul>
+    <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {%- endif -%}
+</div>

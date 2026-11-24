@@ -1,0 +1,17 @@
+title: Khalid Owlwalid
+description: Notes on emulators, embedded systems, C++ and other experiments.
+url: "https://khalidowlwalid.github.io"
+baseurl: ""
+github_username: KhalidOwlWalid
+
+theme: minima
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
